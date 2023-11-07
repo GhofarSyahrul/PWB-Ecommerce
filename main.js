@@ -90,6 +90,21 @@ document.addEventListener("DOMContentLoaded", function () {
         listBarang.appendChild(card);
     }
 
+    // Tambah barang
+    function cartTambahBarang() {
+        const cartItemCount = document.getElementById("cartItemCount");
+        cartItemCount.textContent = `(${totalBarangDiKeranjang})`;
+    }
+
+    function tambahKeranjang(itemId) {
+        if (totalBarangDiKeranjang < 9) {
+            totalBarangDiKeranjang++;
+        } else {
+            totalBarangDiKeranjang = "9+";
+        }
+        cartTambahBarang();
+    }
+
     // cari barang
     function Cari(keyword) {
         listBarang.innerHTML = "";
